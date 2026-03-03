@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Attendance System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <script>
+  if (localStorage.getItem("role") !== "teacher") {
+    window.location.href = "../Login/Frontend/index.html";
+  }
+  </script>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Proxy-Resistant Smart Attendance System</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- TEACHER DASHBOARD -->
+    <div class="card">
+      <h2>Welcome, Mr. Smith</h2>
+
+      <label>Select Class</label>
+      <select>
+        <option>Select Class</option>
+        <option>SY AIML</option>
+        <option>TY AIML</option>
+      </select>
+
+      <label>Select Subject</label>
+      <select>
+        <option>Select Subject</option>
+        <option>Machine Learning</option>
+        <option>DBMS</option>
+        <option>Deep Learning</option>
+      </select>
+
+      <button id="attendanceBtn" onclick="toggleSession()">Start Attendance</button>
+
+      <div class="status-box">
+        <p><strong>Session Status:</strong> <span id="status">Inactive</span></p>
+        <p><strong>Live Attendance Count:</strong> <span id="count">0</span></p>
+      </div>
+
+      <h3>Recent Attendance</h3>
+      <ul>
+        <li>John Doe</li>
+        <li>Alice Brown</li>
+        <li>Mike Johnson</li>
+      </ul>
+    </div>
+
+    <!-- LIVE QR PAGE -->
+    <div class="card center">
+      <h2>Live Attendance Session</h2>
+      <p>
+        Session ID: <span id="sessionId">ABC123</span> |
+        QR Refreshes Every 5 Seconds
+      </p>
+
+      <img id="qrImage"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=ABC123"
+        alt="QR Code">
+
+      <p>Scan the QR Code to Mark Your Attendance.</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
