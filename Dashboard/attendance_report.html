@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Reports</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #eef2f6;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            width: 760px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        .header {
+            background-color: #2f6fb2;
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .icons {
+            font-size: 14px;
+        }
+
+        /* FILTER BAR */
+        .filters {
+            padding: 12px 16px;
+            background: #f7f9fc;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            border-bottom: 1px solid #e0e4ea;
+        }
+
+        select {
+            padding: 5px 10px;
+            font-size: 12px;
+            border: 1px solid #cfd6de;
+            border-radius: 4px;
+        }
+
+        .export-btn {
+            margin-left: auto;
+            background-color: #2f6fb2;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            font-size: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .export-btn:hover {
+            background-color: #255a8f;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        thead {
+            background-color: #f1f4f8;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px;
+            color: #555;
+            border-bottom: 1px solid #dfe3e8;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eef1f4;
+        }
+
+        .present {
+            color: #2e9c4f;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <span>Attendance Reports</span>
+        <span class="icons">☰ ⌕ ⚙</span>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+        <select>
+            <option>Select Date : 24-Apr-2024</option>
+        </select>
+
+        <select>
+            <option>Select Class : Computer Science</option>
+        </select>
+
+        <button class="export-btn">Export to CSV</button>
+    </div>
+
+    <!-- Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Enrollment No.</th>
+                <th>Student Name</th>
+                <th>Status</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>A123</td>
+                <td>John Doe</td>
+                <td class="present">Present</td>
+                <td>10:12 AM</td>
+            </tr>
+
+            <tr>
+                <td>B456</td>
+                <td>Alice Brown</td>
+                <td class="present">Present</td>
+                <td>10:29 AM</td>
+            </tr>
+
+            <tr>
+                <td>B558</td>
+                <td>Mike Johnson</td>
+                <td class="present">Present</td>
+                <td>10:18 AM</td>
+            </tr>
+
+            <tr>
+                <td>A234</td>
+                <td>John Doe</td>
+                <td class="present">Present</td>
+                <td>10:16 AM</td>
+            </tr>
+
+            <tr>
+                <td>A123</td>
+                <td>Alice Brown</td>
+                <td class="present">Present</td>
+                <td>10:16 AM</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</div>
+
+</body>
+</html>
